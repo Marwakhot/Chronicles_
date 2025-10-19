@@ -47,80 +47,29 @@ const TimelineSelection = ({ onSelectTimeline }) => {
 
   return (
     <div className="min-h-screen bg-stone-950 relative overflow-hidden">
-      {/* World Map Background with rustic colors */}
-      <div className="absolute inset-0 opacity-15">
-        <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <filter id="roughPaper">
-              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise"/>
-              <feDiffuseLighting in="noise" lightingColor="#d4a574" surfaceScale="1">
-                <feDistantLight azimuth="45" elevation="60"/>
-              </feDiffuseLighting>
-            </filter>
-          </defs>
-          
-          {/* Aged paper background */}
-          <rect width="100%" height="100%" fill="#2c1810"/>
-          <rect width="100%" height="100%" fill="#8b6f47" opacity="0.3" filter="url(#roughPaper)"/>
-          
-          {/* Simplified World Continents in rustic brown tones */}
-          
-          {/* North America */}
-          <path d="M 150 150 Q 180 120 220 140 L 280 160 Q 300 180 290 220 L 270 280 Q 250 300 220 290 L 180 270 Q 150 250 140 220 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* South America */}
-          <path d="M 220 320 Q 240 310 260 330 L 280 380 Q 290 420 270 460 L 250 480 Q 230 490 220 470 L 210 420 Q 200 380 210 350 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Europe */}
-          <path d="M 520 180 L 560 170 Q 580 175 590 190 L 600 210 Q 595 230 580 235 L 550 240 Q 530 235 520 220 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Africa */}
-          <path d="M 540 260 Q 560 250 580 265 L 600 290 Q 610 330 605 370 L 590 420 Q 570 450 550 445 L 530 420 Q 520 380 525 340 L 530 300 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Asia */}
-          <path d="M 650 140 L 750 130 Q 820 140 870 160 L 920 190 Q 950 220 940 260 L 920 300 Q 880 330 840 320 L 780 300 Q 730 280 700 260 L 670 230 Q 650 200 650 170 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Australia */}
-          <path d="M 880 450 Q 920 440 950 460 L 970 490 Q 975 520 960 540 L 930 550 Q 900 545 880 525 L 870 495 Z" 
-                fill="#6b4423" opacity="0.6" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Antarctica */}
-          <ellipse cx="600" cy="720" rx="300" ry="50" fill="#6b4423" opacity="0.5" stroke="#4a2c1a" strokeWidth="2"/>
-          
-          {/* Vintage map grid lines */}
-          <g stroke="#8b6f47" strokeWidth="0.5" opacity="0.3">
-            <line x1="0" y1="200" x2="1200" y2="200"/>
-            <line x1="0" y1="400" x2="1200" y2="400"/>
-            <line x1="0" y1="600" x2="1200" y2="600"/>
-            <line x1="300" y1="0" x2="300" y2="800"/>
-            <line x1="600" y1="0" x2="600" y2="800"/>
-            <line x1="900" y1="0" x2="900" y2="800"/>
-          </g>
-          
-          {/* Decorative corner ornaments */}
-          <g stroke="#8b6f47" fill="none" strokeWidth="2" opacity="0.4">
-            <path d="M 20 20 L 60 20 L 60 30 M 20 20 L 20 60 L 30 60"/>
-            <path d="M 1180 20 L 1140 20 L 1140 30 M 1180 20 L 1180 60 L 1170 60"/>
-            <path d="M 20 780 L 60 780 L 60 770 M 20 780 L 20 740 L 30 740"/>
-            <path d="M 1180 780 L 1140 780 L 1140 770 M 1180 780 L 1180 740 L 1170 740"/>
-          </g>
-          
-          {/* Compass rose */}
-          <g transform="translate(100, 650)" opacity="0.4">
-            <circle cx="0" cy="0" r="40" fill="none" stroke="#8b6f47" strokeWidth="1.5"/>
-            <circle cx="0" cy="0" r="30" fill="none" stroke="#8b6f47" strokeWidth="1"/>
-            <path d="M0,-35 L5,-10 L0,0 L-5,-10 Z" fill="#d4a574"/>
-            <path d="M0,35 L5,10 L0,0 L-5,10 Z" fill="#6b4423"/>
-            <path d="M-35,0 L-10,5 L0,0 L-10,-5 Z" fill="#6b4423"/>
-            <path d="M35,0 L10,5 L0,0 L10,-5 Z" fill="#6b4423"/>
-            <text x="0" y="-45" textAnchor="middle" fill="#8b6f47" fontSize="12" fontFamily="serif">N</text>
-          </g>
-        </svg>
+      {/* 3D Revolving Earth Animation */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-20 overflow-hidden">
+        <div className="earth-container">
+          <div className="earth">
+            <div className="earth-sphere">
+              {/* Continents */}
+              <div className="continent continent-1"></div>
+              <div className="continent continent-2"></div>
+              <div className="continent continent-3"></div>
+              <div className="continent continent-4"></div>
+              <div className="continent continent-5"></div>
+              <div className="continent continent-6"></div>
+              
+              {/* Grid lines */}
+              <div className="grid-line grid-horizontal" style={{ top: '25%' }}></div>
+              <div className="grid-line grid-horizontal" style={{ top: '50%' }}></div>
+              <div className="grid-line grid-horizontal" style={{ top: '75%' }}></div>
+              <div className="grid-line grid-vertical" style={{ left: '25%' }}></div>
+              <div className="grid-line grid-vertical" style={{ left: '50%' }}></div>
+              <div className="grid-line grid-vertical" style={{ left: '75%' }}></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Decorative corner compass */}
@@ -245,6 +194,148 @@ const TimelineSelection = ({ onSelectTimeline }) => {
         }
         .animate-slide-in {
           opacity: 0;
+        }
+
+        /* 3D Earth Animation Styles */
+        .earth-container {
+          perspective: 1000px;
+          width: 600px;
+          height: 600px;
+        }
+
+        .earth {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: rotate-earth 60s linear infinite;
+        }
+
+        @keyframes rotate-earth {
+          from {
+            transform: rotateY(0deg) rotateX(15deg);
+          }
+          to {
+            transform: rotateY(360deg) rotateX(15deg);
+          }
+        }
+
+        .earth-sphere {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, #1e3a5f, #0a1929);
+          box-shadow: 
+            inset -40px -40px 80px rgba(0, 0, 0, 0.6),
+            inset 20px 20px 40px rgba(100, 150, 200, 0.1),
+            0 0 100px rgba(139, 111, 71, 0.3);
+          transform-style: preserve-3d;
+          overflow: hidden;
+        }
+
+        /* Continents */
+        .continent {
+          position: absolute;
+          background: rgba(139, 111, 71, 0.7);
+          border-radius: 40% 60% 50% 50%;
+          box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .continent-1 {
+          /* North America */
+          width: 120px;
+          height: 180px;
+          top: 15%;
+          left: 20%;
+          transform: rotateZ(-15deg);
+        }
+
+        .continent-2 {
+          /* South America */
+          width: 80px;
+          height: 150px;
+          top: 45%;
+          left: 25%;
+          transform: rotateZ(10deg);
+          border-radius: 50% 50% 40% 60%;
+        }
+
+        .continent-3 {
+          /* Africa */
+          width: 100px;
+          height: 160px;
+          top: 30%;
+          left: 45%;
+          border-radius: 45% 55% 50% 50%;
+        }
+
+        .continent-4 {
+          /* Europe */
+          width: 70px;
+          height: 60px;
+          top: 20%;
+          left: 48%;
+          border-radius: 60% 40% 50% 50%;
+        }
+
+        .continent-5 {
+          /* Asia */
+          width: 200px;
+          height: 140px;
+          top: 18%;
+          left: 55%;
+          transform: rotateZ(5deg);
+          border-radius: 50% 50% 45% 55%;
+        }
+
+        .continent-6 {
+          /* Australia */
+          width: 90px;
+          height: 70px;
+          top: 60%;
+          left: 70%;
+          border-radius: 55% 45% 50% 50%;
+        }
+
+        /* Grid lines */
+        .grid-line {
+          position: absolute;
+          background: rgba(139, 111, 71, 0.2);
+        }
+
+        .grid-horizontal {
+          width: 100%;
+          height: 1px;
+          left: 0;
+        }
+
+        .grid-vertical {
+          width: 1px;
+          height: 100%;
+          top: 0;
+        }
+
+        /* Glow effect */
+        .earth-sphere::after {
+          content: '';
+          position: absolute;
+          top: -10%;
+          left: -10%;
+          right: -10%;
+          bottom: -10%;
+          border-radius: 50%;
+          background: radial-gradient(circle at 30% 30%, 
+            rgba(139, 111, 71, 0.3) 0%, 
+            transparent 70%);
+          pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+          .earth-container {
+            width: 400px;
+            height: 400px;
+          }
         }
       `}</style>
     </div>
