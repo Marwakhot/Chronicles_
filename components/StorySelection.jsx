@@ -181,18 +181,6 @@ const StorySelection = ({ timeline, onBack }) => {
           ))}
         </div>
 
-        {/* Info Box */}
-        <div className="mt-12 max-w-2xl mx-auto bg-amber-900/20 backdrop-blur-sm border-2 border-amber-700/50 rounded-xl p-6">
-          <div className="flex items-start gap-4">
-            <BookOpen className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="text-amber-300 font-serif font-bold text-lg mb-2">About Interactive Stories</h3>
-              <p className="text-amber-200/80 leading-relaxed">
-                Each story places you in a pivotal historical moment where your choices matter. Your decisions will shape the narrative, affect your character's fate, and explore the moral complexities of history. Multiple endings await based on your choices.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`
