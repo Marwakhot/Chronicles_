@@ -134,9 +134,10 @@ const TimelineSelection = ({ onSelectTimeline }) => {
       <div className="relative z-10 container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-4xl md:text-5xl text-amber-300 font-serif tracking-wider" 
+          <p className="text-4xl md:text-5xl font-bold text-amber-300 font-serif tracking-wider" 
              style={{ 
-               fontFamily: 'Cinzel, Georgia, serif'
+               fontFamily: 'Cinzel, Georgia, serif',
+               fontWeight: '700'
              }}>
             Select your destination in history
           </p>
