@@ -47,31 +47,6 @@ const TimelineSelection = ({ onSelectTimeline }) => {
 
   return (
     <div className="min-h-screen bg-stone-950 relative overflow-hidden">
-      {/* 3D Revolving Earth Animation */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-20 overflow-hidden">
-        <div className="earth-container">
-          <div className="earth">
-            <div className="earth-sphere">
-              {/* Continents */}
-              <div className="continent continent-1"></div>
-              <div className="continent continent-2"></div>
-              <div className="continent continent-3"></div>
-              <div className="continent continent-4"></div>
-              <div className="continent continent-5"></div>
-              <div className="continent continent-6"></div>
-              
-              {/* Grid lines */}
-              <div className="grid-line grid-horizontal" style={{ top: '25%' }}></div>
-              <div className="grid-line grid-horizontal" style={{ top: '50%' }}></div>
-              <div className="grid-line grid-horizontal" style={{ top: '75%' }}></div>
-              <div className="grid-line grid-vertical" style={{ left: '25%' }}></div>
-              <div className="grid-line grid-vertical" style={{ left: '50%' }}></div>
-              <div className="grid-line grid-vertical" style={{ left: '75%' }}></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Decorative corner compass */}
       <div className="absolute top-8 right-8 opacity-40">
         <div className="relative">
